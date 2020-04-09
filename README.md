@@ -35,5 +35,34 @@
 #### 对应生成的代码
 
 ```java
-...
+import java.io.Serializable;
+import java.util.List;
+import com.google.gson.annotations.SerializedName;
+
+/**
+ * xxx
+ *
+ * @author xxx 
+ */
+public class CustomPojo implements Serializable {
+    private static final long serialVersionUID = 2401113242771510981L;
+
+    @SerializedName("name")
+    public String mName;
+    @SerializedName("age")
+    public int mAge;
+    @SerializedName("sex")
+    public int mSex;
+    @SerializedName("scores")
+    public List<CustomScores> mScores;
+
+    public static class CustomScores implements Serializable {
+        private static final long serialVersionUID = 5835901118477215543L;
+        @SerializedName("type")
+        public String mType;
+        @SerializedName("score")
+        public String mScore;
+    }
+
+}
 ```
